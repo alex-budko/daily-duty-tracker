@@ -28,8 +28,9 @@ const App = () => {
 
   return (
     <div className="container">
-      <Header title = "Daily Task Tracker" />
-      <Tasks tasks = {tasks} onDelete={deleteTask} />
+      <Header title = "Daily Duty Tracker" />
+      {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete={deleteTask} />
+      : 'No Duties To Show'}
     </div>
   );
 }
