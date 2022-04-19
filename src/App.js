@@ -1,6 +1,7 @@
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
+import AddTask from './components/AddTask';
 import { useState } from "react"
 
 const App = () => {
@@ -19,7 +20,14 @@ const App = () => {
     }
   ])
 
-  // Delete task
+  //Add Task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 1000000) + 1
+    const newTask = {id, ...task}
+    //adds the new task to the array
+    setTasks([...tasks, newTask])
+  }
+  // Delete Task
   const deleteTask = (id) => {
     //keeps all tasks that are not a specific id
     setTasks(tasks.filter((task)=> task.id !== id))
@@ -33,6 +41,7 @@ const App = () => {
   return (
     <div className="container">
       <Header title = "Daily Duty Tracker" />
+      <AddTask onAdd = {addTask} />
       {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
       : 'No Duties To Show'}
     </div>
