@@ -18,10 +18,18 @@ const App = () => {
       reminder: true,
     }
   ])
+
+  // Delete task
+  const deleteTask = (id) => {
+    //keeps all tasks that are not a specific id
+    setTasks(tasks.filter((task)=> task.id !== id))
+  }
+
+
   return (
     <div className="container">
       <Header title = "Daily Task Tracker" />
-      <Tasks tasks = {tasks} />
+      <Tasks tasks = {tasks} onDelete={deleteTask} />
     </div>
   );
 }
