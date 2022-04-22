@@ -40,6 +40,7 @@ const App = () => {
       headers: {
         'Content-type': 'application/json'
       },
+      //retrieves task
       body: JSON.stringify(task)
     })
 

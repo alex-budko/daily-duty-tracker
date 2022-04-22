@@ -22,6 +22,7 @@ const AddTask = ({onAdd}) => {
     }
 
     return (
+        //form for when a new task in to be added
         <form className="add-form" onSubmit={onSubmit}>
             <div className="form-control">
                 <label>Duty</label>
