@@ -9,9 +9,14 @@ import About from './components/About';
 import { useState, useEffect } from "react"
 
 const App = () => {
+
+  //opens the add-task bar
   const [showAddTask, setShowAddTask] = useState(false)
+
+  // array keeps track of tasks
   const [tasks, setTasks] = useState([])
 
+  //gets the tasks from JSON server
   useEffect(()=> {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
